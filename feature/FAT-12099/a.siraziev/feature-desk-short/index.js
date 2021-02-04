@@ -12,7 +12,6 @@ let object = {
         return this;
     }
 }
-
 //console.log("1st task: ", object.dec().add().add().add().count);
 
 
@@ -20,14 +19,20 @@ let object = {
 /* 2. Реализовать функцию sum(1)(2)(3) */
 
 function sum(a){
-    return function(b){
-        return function(c){
-            return a + b + c;
-        }
+    let currentValue = a;
+    
+    function sumUp(b){
+        if(b === undefined) return sumUp;
+        currentValue += b;
+        return sumUp;
     }
+    
+    sumUp.valueOf = ()=>currentValue;
+
+    return sumUp;
 }
 
-//console.log('2nd task: ', sum(1)(2)(6));
+console.log('2nd task: ' + sum(1)(2)(6)());
 
 
 
@@ -39,15 +44,8 @@ function sum(a){
 function objectCreator(str){
     let arr = str.split('.');
     let obj = {};
-    let lastProperty = obj;
-    for(let letter of arr){
-        if(arr[arr.length - 1] === letter){
-            lastProperty[letter] = null;
-            return obj;
-        }
-        lastProperty[letter] = {};
-        lastProperty = lastProperty[letter];        
-    }
+    arr.reduce((acc, current, index)=>index === arr.length-1 ? acc[current] = null : acc[current] = {}, obj)
+    return obj;
 }
 
 let obj3 = objectCreator('a.b.c.d');
