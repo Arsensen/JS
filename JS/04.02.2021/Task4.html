@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-4</title>
+</head>
+<body>
+    <!-- 4. Привяжите всем инпутам следующее событие - по потери фокуса каждый инпут выводит свое value в абзац с id="test". -->
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <script>
+        let inputs = document.body.querySelectorAll('input');
+        inputs.forEach(input=>{
+            input.addEventListener('blur', (e)=>{
+                let value = e.target.value;
+                if(value === '') return;
+                let p = document.createElement("p");
+                p.innerHTML = value;
+                p.id = "test";
+                document.body.append(p);
+                e.target.value = '';
+            })
+        });
+    </script>
+
+</body>
+</html>

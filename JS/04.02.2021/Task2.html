@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-2</title>
+</head>
+<body>
+
+    <!-- 2. Привяжите всем ссылкам событие - по наведению на ссылку в конец ее текста дописывается ее href в круглых скобках. -->
+    
+    <a href="linkHref1">Link 1</a>
+    <a href="linkHref2">Link 2</a>
+    <a href="linkHref3">Link 3</a>
+    <a href="linkHref4">Link 4</a>
+
+
+    <script>
+        let aList = document.body.querySelectorAll('a');
+        aList.forEach(a=>{
+            a.addEventListener('mouseover', (e)=>{
+                e.target.innerHTML += `(${e.target.href})`;
+            })
+
+            a.addEventListener('mouseout', (e)=>{
+                let value = e.target.innerHTML;
+                e.target.innerHTML = value.substring(value.indexOf(e.target.href) - 1, -1);
+            })
+        });
+    </script>
+
+
+
+
+
+    
+</body>
+</html>
