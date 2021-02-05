@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-7</title>
+</head>
+<body>
+    <!-- 9. Дан ul, в нем несколько li. Под ul сделайте кнопку, по нажатию на которую в конец ul будет добавляться новый li с текстом 'пункт'. 
+    Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'. Это должно работать и для вновь добавленных li. 
+    Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul). -->
+
+        <ul>
+            <li>пункт</li>
+            <li>пункт</li>
+            <li>пункт</li>
+            <li>пункт</li>
+        </ul>
+        <button>Add li</button>
+
+        <script>
+            let ul = document.body.querySelector('ul');
+            let button = document.body.querySelector('button');
+            button.addEventListener('click', (e)=>{
+                let li = document.createElement('li');
+                li.innerHTML = 'пункт';
+                ul.append(li);
+            })
+            ul.addEventListener('click', (e)=>{
+                e.target.innerHTML += '!';
+            })
+        </script>    
+</body>
+</html>

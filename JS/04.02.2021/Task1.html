@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+</head>
+<body>
+    <!-- 1.  Даны ссылки. Привяжите всем ссылкам событие - по наведению на ссылку в атрибут е  title запишется ее текст. -->
+    <a href="">Link 1</a>
+    <a href="">Link 2</a>
+    <a href="">Link 3</a>
+    <a href="">Link 4</a>
+
+
+    <script>
+        let aList = document.body.querySelectorAll('a');
+        aList.forEach(a=>{
+            a.addEventListener('mouseover', (e)=>{
+                e.target.title = e.target.innerHTML
+            })
+        });
+    </script>
+
+</body>
+</html>

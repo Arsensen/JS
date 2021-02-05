@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-5</title>
+</head>
+<body>
+    <!-- 5 . Для всех инпутов сделайте так, чтобы они выводили свой value алертом при нажатии на любой из них, но только по первому нажатию. 
+        Повторное нажатие на инпут не должно вызывать реакции. -->
+
+    <input type="text" value="input1">
+    <input type="text" value="input2">
+    <input type="text" value="input3">
+    <input type="text" value="input4">
+
+
+    <script>
+        let inputs = document.body.querySelectorAll('input');
+        inputs.forEach(input=>{
+            input.addEventListener('focus', (e)=>{
+                alert(e.target.value)
+            }, {once: true})
+        });
+    </script>
+
+</body>
+</html>

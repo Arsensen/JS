@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3</title>
+</head>
+<body>
+
+    <!-- 3. Дополните предыдущую задачу: после первого наведению на ссылку следует отвязать от нее событие, которое добавляет href в конец текста. -->
+    
+    <a href="linkHref1">Link 1</a>
+    <a href="linkHref2">Link 2</a>
+    <a href="linkHref3">Link 3</a>
+    <a href="linkHref4">Link 4</a>
+
+    <script>
+        let aList = document.body.querySelectorAll('a');
+        aList.forEach(a=>{
+            a.addEventListener('mouseover', (e)=>{
+                e.target.innerHTML += `(${e.target.href})`;
+            }, {once: true})
+        });
+    </script>    
+</body>
+</html>
