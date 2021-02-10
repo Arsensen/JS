@@ -14,7 +14,7 @@ class Singleton{
 
 //Singleton ES5
 
-let SingletonFunction = (function(){
+var SingletonFunction = (function(){
     var instance;
 
     var increaseCount = function(){

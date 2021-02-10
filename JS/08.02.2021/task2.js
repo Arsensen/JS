@@ -3,12 +3,12 @@ name: string
 getName: () => string */
 
 function Person(str){
-    let obj = {};
-    obj.name = str;
-    obj.getName = function(){
-        return obj.name;
+    var that = {};
+    that.name = str;
+    that.getName = function(){
+        return that.name;
     };
-    return obj;
+    return that;
 }
 
 /* Реализовать Man class который наследуется от Person
@@ -18,10 +18,10 @@ getName: () => string
 getFacialHair: () => boolean */
 
 function Man(str, bool){
-    let obj = Person(str);
-    obj.facialHair = bool;
-    obj.getFacialHair = function(){
-        return obj.facialHair;
+    var that = Person(str);
+    that.facialHair = bool;
+    that.getFacialHair = function(){
+        return that.facialHair;
     };
-    return obj;
+    return that;
 }
