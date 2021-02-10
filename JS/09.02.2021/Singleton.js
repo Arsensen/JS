@@ -23,7 +23,7 @@ var SingletonFunction = (function(){
 
     return {
         getInstance(){
-            return instance || (instance = { increaseCount: increaseCount, count: 0 })
+            return instance || (instance = { increaseCount: increaseCount, count: 0 });
         }
     }
 })()
